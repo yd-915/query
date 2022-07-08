@@ -8,9 +8,9 @@ var favicon = require('serve-favicon');
 
 var indexRouter = require('./routes/index');
 var basicRouter = require('./routes/fundamentals');
-var casesRouter = require('./routes/intermidiate');
-var plusRouter = require('./routes/plus');
-var newRouter = require('./routes/complex');
+var intermediateRouter = require('./routes/intermediate');
+var advancedRouter = require('./routes/advanced');
+var complexRouter = require('./routes/complex');
 
 var app = express();
 
@@ -28,9 +28,9 @@ app.use("/public", express.static('public'));
 
 app.use('/', indexRouter);
 app.use('/basic', basicRouter);
-app.use('/cases', casesRouter);
-app.use('/plus', plusRouter);
-app.use('/new', newRouter);
+app.use('/intermediate', intermediateRouter);
+app.use('/advanced', advancedRouter);
+app.use('/complex', complexRouter);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
